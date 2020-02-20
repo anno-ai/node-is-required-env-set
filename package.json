@@ -1,5 +1,5 @@
 {
-  "name": "node-is-required-env-set",
+  "name": "@annoai/node-is-required-env-set",
   "version": "1.0.0",
   "description": "Helper function to check if required environment variables are set",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/anno-ai/node-is-required-env-set/issues"
   },
-  "homepage": "https://github.com/anno-ai/node-is-required-env-set#readme"
+  "homepage": "https://github.com/anno-ai/node-is-required-env-set#readme",
+  "dependencies": {
+    "check-env": "^1.3.0"
+  }
 }
