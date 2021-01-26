@@ -1,5 +1,5 @@
 {
-    "name": "node-is-required-env-set",
+    "name": "@annoai/node-is-required-env-set",
     "description": "Helper function to check if required environment variables are set",
     "license": "UNLICENSED",
     "author": "Anno.Ai",
