@@ -11,5 +11,4 @@ Helper function to check if required environment variables are set
 const { isRequiredEnvSet } = require('./index.js')
 
 isRequiredEnvSet('Shell', ['SHELL'])
-
 ```
