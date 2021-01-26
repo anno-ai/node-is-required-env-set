@@ -1,6 +1,26 @@
+################################################
+# Anno.Ai Application Specific
+################################################
+
+
+################################################
+# Exclude default node gitignore
+# https://github.com/anno-ai/anno.ai-gitignore/blob/master/Node.gitignore
+################################################
+
+# Mac specific hidden files
+.DS_STORE
+
+# Exclude certificates
+*.crt
+*.key
+*.pem
+
 # Logs
 logs
 *.log
+*.swp
+*.out
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

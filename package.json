@@ -1,22 +1,86 @@
 {
-  "name": "@annoai/node-is-required-env-set",
-  "version": "1.0.0",
-  "description": "Helper function to check if required environment variables are set",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anno-ai/node-is-required-env-set.git"
-  },
-  "author": "Andrew Hayes",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/anno-ai/node-is-required-env-set/issues"
-  },
-  "homepage": "https://github.com/anno-ai/node-is-required-env-set#readme",
-  "dependencies": {
-    "check-env": "^1.3.0"
-  }
+    "name": "node-is-required-env-set",
+    "description": "Helper function to check if required environment variables are set",
+    "license": "UNLICENSED",
+    "author": "Anno.Ai",
+    "homepage": "https://github.com/anno-ai/node-is-required-env-set#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anno-ai/node-is-required-env-set.git"
+    },
+    "version": "0.0.1",
+    "main": "dist/lib/index.js",
+    "scripts": {
+        "build": "tsc",
+        "lint": "standardx --verbose | snazzy",
+        "lint:fix": "standardx --fix --verbose | snazzy",
+        "test:unit": "mocha --config .mocharc.json"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "dependencies": {
+        "@types/lodash": "^4.14.149",
+        "@types/node": "^13.9.1",
+        "check-env": "^1.3.0",
+        "lodash": "^4.17.15"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.2.11",
+        "@types/fs-extra": "^8.1.0",
+        "@types/mocha": "^8.0.1",
+        "@typescript-eslint/eslint-plugin": "^2.31.0",
+        "@typescript-eslint/parser": "^2.31.0",
+        "chai": "^4.2.0",
+        "chai-as-promised": "^7.1.1",
+        "chai-fs": "^2.0.0",
+        "chai-string": "^1.5.0",
+        "dotenv": "^7.0.0",
+        "fs": "0.0.1-security",
+        "fs-extra": "^8.1.0",
+        "lint-staged": "^8.2.1",
+        "mocha": "^8.0.1",
+        "promised-lifestream": "^0.7.0",
+        "snazzy": "^8.0.0",
+        "standardx": "^5.0.0",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.8.3"
+    },
+    "eslintConfig": {
+        "rules": {
+            "no-unused-vars": "off",
+            "@typescript-eslint/no-unused-vars": "error",
+            "lodash/import-scope": "off"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "./lib/*.{js,jsx,ts,tsx}": [
+            "standardx --fix --verbose",
+            "git add"
+        ]
+    },
+    "standardx": {
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+            "@typescript-eslint/eslint-plugin"
+        ],
+        "global": [
+            "after",
+            "afterEach",
+            "assert",
+            "before",
+            "beforeEach",
+            "describe",
+            "expect",
+            "it"
+        ]
+    }
 }
